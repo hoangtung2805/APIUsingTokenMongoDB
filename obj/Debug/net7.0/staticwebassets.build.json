@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sGSFwVAOT1tOuNoj9eupSXKSIqaCFByy/1a6bWDDsg0=",
+  "Source": "APIUsingTokenMongoDB",
+  "BasePath": "_content/APIUsingTokenMongoDB",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
