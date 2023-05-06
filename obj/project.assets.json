@@ -2589,11 +2589,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB.csproj",
+      "projectUniqueName": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB.csproj",
       "projectName": "APIUsingTokenMongoDB",
-      "projectPath": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB.csproj",
+      "projectPath": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\obj\\",
+      "outputPath": "D:\\Work\\Edmicro\\APIUsingTokenMongoDB\\APIUsingTokenMongoDB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
