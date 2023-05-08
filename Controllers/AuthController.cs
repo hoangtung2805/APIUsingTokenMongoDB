@@ -1,7 +1,9 @@
 ﻿using APIUsingTokenMongoDB.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -11,6 +13,7 @@ namespace APIUsingTokenMongoDB.Controllers
     public class AuthController : Controller
     {
         private IMongoCollection<Student> _students;
+        
         private readonly IConfiguration _configuration;
         public AuthController(IConfiguration configuration)
         {
@@ -42,6 +45,31 @@ namespace APIUsingTokenMongoDB.Controllers
 
             return new { token };
         }
+        [HttpPost("Register")]
+        public async Task<ActionResult<Register>> Register(Register register,Student student)
+        {
+            // Check if the username already exists
+            var usernameExists = await _students.Find(x => x.username == register.username).AnyAsync();
+            if (usernameExists)
+            {
+                return BadRequest(new { error = "Username already exists" });
+            }
+            student = new Student();
+            student.name = register.name;
+            student.username = register.username;
+            student.password = register.password;
+            student.gender = register.gender;
+            student.dob= register.dob;
+
+
+            // Insert the student into the collection
+            await _students.InsertOneAsync(student);
+
+            return register;
+        }
+
+
+
 
         private string CreateToken(Student loginStudent)
         {

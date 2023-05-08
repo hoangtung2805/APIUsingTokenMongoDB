@@ -21,6 +21,25 @@ namespace APIUsingTokenMongoDB.Controllers
             var database = client.GetDatabase("student");
             _students = database.GetCollection<Student>("student");
         }
+        [HttpGet("StudentInfo")]
+        [Authorize] // Requires authentication (token) to access this endpoint
+        public async Task<ActionResult<Student>> GetStudentInfo()
+        {
+            // Get the authenticated user's username from the claims
+            var username = User.Identity.Name;
+
+            // Find the student by username
+            var filter = Builders<Student>.Filter.Eq(x => x.username, username);
+            var student = await _students.Find(filter).FirstOrDefaultAsync();
+
+            if (student == null)
+            {
+                return NotFound(new { error = "Student not found" });
+            }
+
+            return student;
+        }
+
         [HttpGet("GetAllStudent")]
         [Authorize]
         public async Task<List<Student>> GetAllStudent()
@@ -36,13 +55,7 @@ namespace APIUsingTokenMongoDB.Controllers
             var student = await _students.Find(filter).FirstOrDefaultAsync();
             return student;
         }
-        [HttpPost("CreateStudent")]
-        [Authorize]
-        public async Task<Student> CreateStudent(Student student)
-        {
-            await _students.InsertOneAsync(student);
-            return student;
-        }
+        
 
         [HttpPost("UpdateStudentById")]
         [Authorize]
