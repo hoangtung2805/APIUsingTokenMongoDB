@@ -1,4 +1,6 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 
 namespace APIUsingTokenMongoDB.Models
 {
@@ -7,6 +9,7 @@ namespace APIUsingTokenMongoDB.Models
 
         public string name { get; set; }
         public bool gender { get; set; }
+        [BsonDateTimeOptions(DateOnly = true)]
         public DateTime dob
         { get; set; }
         public string? username { get; set; }
