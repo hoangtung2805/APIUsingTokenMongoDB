@@ -6,7 +6,7 @@ using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-string connectionString = "mongodb://127.0.0.1:27017";
+string connectionString = "mongodb+srv://sa:sa@cluster0.tcql2oc.mongodb.net/";
 string databaseName = "student";
 string collectionName = "student";
 var client = new MongoClient(connectionString);

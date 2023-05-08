@@ -17,7 +17,7 @@ namespace APIUsingTokenMongoDB.Controllers
         private IMongoCollection<Student> _students;
         public HomeController()
         {
-            var client = new MongoClient("mongodb://localhost:27017");
+            var client = new MongoClient("mongodb+srv://sa:sa@cluster0.tcql2oc.mongodb.net/");
             var database = client.GetDatabase("student");
             _students = database.GetCollection<Student>("student");
         }
