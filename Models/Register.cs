@@ -9,7 +9,7 @@ namespace APIUsingTokenMongoDB.Models
 
         public string name { get; set; }
         public bool gender { get; set; }
-        [BsonDateTimeOptions(DateOnly = true)]
+        
         public DateTime dob
         { get; set; }
         public string? username { get; set; }
