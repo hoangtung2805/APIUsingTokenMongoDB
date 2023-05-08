@@ -46,7 +46,7 @@ namespace APIUsingTokenMongoDB.Controllers
             return new { token };
         }
         [HttpPost("Register")]
-        public async Task<ActionResult<Register>> Register(Register register,Student student)
+        public async Task<ActionResult<Register>> Register([FromBody] Register register, [FromBody] Student student)
         {
             // Check if the username already exists
             var usernameExists = await _students.Find(x => x.username == register.username).AnyAsync();
