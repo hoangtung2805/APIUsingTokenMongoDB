@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Work\Edmicro\APIUsingTokenMongoDB\APIUsingTokenMongoDB\bin\Release\net7.0\publish\</_PublishTargetUrl>
-    <History>True|2023-05-08T03:01:00.1762008Z;True|2023-05-08T10:00:10.7008415+07:00;True|2023-05-08T10:00:05.5976463+07:00;True|2023-05-06T13:38:08.4617818+07:00;</History>
+    <History>True|2023-05-08T04:16:03.9788906Z;True|2023-05-08T11:15:51.0915070+07:00;True|2023-05-08T10:01:00.1762008+07:00;True|2023-05-08T10:00:10.7008415+07:00;True|2023-05-08T10:00:05.5976463+07:00;True|2023-05-06T13:38:08.4617818+07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
